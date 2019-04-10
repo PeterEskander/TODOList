@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import TaskList from './TaskList';
+import AddTask from './AddTask';
+
 class App extends Component {
     constructor(props) {
         super(props);
