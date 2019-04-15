@@ -1,15 +1,23 @@
 import React from 'react';
 
+import './styleCasey.css';
+
+
+
 const TaskItem = props => {
+
+
   return (
-    <li className="list-group-item">
-      { props.task.title }
-      <button type="button"
-              onClick={() => props.markDone(props.task)}
-              className="btn btn-primary" style={{ float: 'right' }}>
-        Done
-        </button>
-    </li>
+
+
+      <tbody className="tableBodyStyle">
+        <tr>
+          <td className="titleStyle tableRowStyle g">{ props.task.title }</td>
+          <td className="statusStyle tableRowStyle">{props.task.type}</td>
+          <td className="typeStyle tableRowStyle">{props.task.column}</td>
+        </tr>
+      </tbody>
+
   )
 };
 

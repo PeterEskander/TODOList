@@ -1,0 +1,68 @@
+.tableStyling{
+    border-collapse: collapse;
+    width: 70%;
+
+}
+
+.tableHeadingStyling {
+    padding-right: 5em;
+    padding-left: 5em;
+    padding-bottom: 2em;
+}
+
+.tableRowStyle{
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.tableBodyStyle{
+    border: 1px solid lightblue;
+
+}
+
+
+.selectStyle{
+
+}
+
+.tableRowSelectStyle{
+
+}
+
+.labelRowStyle{
+
+}
+
+.selectRowStyle{
+    margin-bottom: 3em;
+    padding-bottom: 3em;
+}
+
+
+.tableDataSelect{
+    padding-bottom: 4em;
+}
+.tableDataLabel{
+    padding-top: 5em;
+}
+
+
+
+
+.titleStyle{
+    text-align: left;
+    padding-left: 3em;
+}
+
+.statusStyle{
+    text-align: center;
+}
+
+.typeStyle{
+    text-align: right;
+    padding-right: 5em;
+}
+
+
+
