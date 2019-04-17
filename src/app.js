@@ -12,7 +12,9 @@ class App extends Component {
             tasks: []
         };
     }
-
+    onUpdateTaskList = (newTaskList) => {
+        this.setState({ tasks: newTaskList });
+    }
 
     componentDidMount() {
         this.getData();
