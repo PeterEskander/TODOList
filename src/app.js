@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import PageTabs from './PageTabs';
 import TaskList from './TaskList';
 import AddTask from './AddTask';
-import TaskBoard from './TaskBoard';
+//import TaskBoard from './TaskBoard';
 
 class App extends Component {
     constructor(props) {
@@ -44,19 +45,31 @@ class App extends Component {
             items: [...this.state.items, this.state.term]
         });
     }
-
+    wrapPage(jsx) {
+        const { view } = this.state;
+        return (
+            <div className="container">
+                <PageTabs currentView={view}
+                          onViewChange={this.onViewChange.bind(this)}/>
+                {jsx}
+            </div>
+        );
+    }
+    onViewChange(view) {
+        this.setState({ view });
+    }
     render() {
         const {view} = this.state;
 
         switch (view) {
             case 'TaskList':
                 return (this.wrapPage(
-                    <TaskList/>
+                    <TaskList tasks={this.state.tasks} />
                 ));
-            case 'TaskBoard':
+            /*case 'TaskBoard':
                 return (this.wrapPage(
                     <TaskBoard/>
-                ));
+                ));*/
             case 'AddTask':
                 return (this.wrapPage(
                     <AddTask/>
