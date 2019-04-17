@@ -38,11 +38,11 @@ class App extends Component {
         this.setState({term: event.target.value});
     }
 
-    onSubmit = (event) => {
-        event.preventDefault();
+    onSubmit = (title, type, column) => {
+        //event.preventDefault();
         this.setState({
             term: '',
-            items: [...this.state.items, this.state.term]
+            tasks: [ ... this.state.tasks, { title, type, column: 'In Progress' }]
         });
     }
     wrapPage(jsx) {
@@ -72,7 +72,7 @@ class App extends Component {
                 ));*/
             case 'AddTask':
                 return (this.wrapPage(
-                    <AddTask/>
+                    <AddTask onSubmit={this.onSubmit} />
                 ));
             default:
                 return (this.wrapPage(
