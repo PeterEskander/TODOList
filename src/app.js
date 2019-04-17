@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import TaskList from './TaskList';
 import AddTask from './AddTask';
+import TaskBoard from './TaskBoard';
 
 class App extends Component {
     constructor(props) {
@@ -12,8 +13,9 @@ class App extends Component {
             tasks: []
         };
     }
+
     onUpdateTaskList = (newTaskList) => {
-        this.setState({ tasks: newTaskList });
+        this.setState({tasks: newTaskList});
     }
 
     componentDidMount() {
@@ -21,21 +23,18 @@ class App extends Component {
     }
 
 
-
-    getData(){
+    getData() {
         axios.get('http://my-json-server.typicode.com/hpc3/project2JSONDB/tasks')
-            .then(response =>{
+            .then(response => {
                 this.setState({tasks: response.data});
             }).catch(error => {
-            this.setState({errorMessage: error.message });
+            this.setState({errorMessage: error.message});
         });
     }
 
 
-
-
     onChange = (event) => {
-        this.setState({ term: event.target.value });
+        this.setState({term: event.target.value});
     }
 
     onSubmit = (event) => {
@@ -47,15 +46,26 @@ class App extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <form className="App" onSubmit={this.onSubmit}>
-                    <input value={this.state.term} onChange={this.onChange} />
-                    <button>Submit</button>
-                </form>
-                {/*<List items={this.state.items} />*/}
-            </div>
-        );
+        const {view} = this.state;
+
+        switch (view) {
+            case 'TaskList':
+                return (this.wrapPage(
+                    <TaskList/>
+                ));
+            case 'TaskBoard':
+                return (this.wrapPage(
+                    <TaskBoard/>
+                ));
+            case 'AddTask':
+                return (this.wrapPage(
+                    <AddTask/>
+                ));
+            default:
+                return (this.wrapPage(
+                    <h2>Invalid Tab, choose another</h2>
+                ));
+        }
     }
 }
 
