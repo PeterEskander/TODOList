@@ -1,13 +1,14 @@
 import React from 'react';
 
 class AddTask extends React.Component {
-  state = { newTask: '' }
+  state = { newTask: '', newType: '' }
 
   onFormSubmit = (event) => {
     event.preventDefault();
 
-    this.props.onSubmit(this.state.newTask);
-    this.setState({ newTask: '' })
+    this.props.onSubmit(this.state.newTask, this.state.newType);
+    this.setState({ newTask: ' ', newType: ' '})
+
   }
 
   render() {
@@ -18,6 +19,11 @@ class AddTask extends React.Component {
                name="newTask"
                value={this.state.newTask}
                onChange={(e) => this.setState({ newTask: e.target.value })} />
+        <label htmlFor="NewType">Enter The Tasks's type</label>
+               <input type="text" className="from-control" name="newType" value={this.state.newType}
+                      onChange={(e) => this.setState({ newType: e.target.value })} />
+
+                      <input type="submit" />
       </form>
     );
   }

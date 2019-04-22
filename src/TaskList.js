@@ -81,13 +81,9 @@ class TaskList extends React.Component {
 
 
   render() {
-      console.log("right below here");
-     console.log(this.props.tasks);
     const taskItems = this.props.tasks.map(task => {
       return <TaskItem task={task} key={task.id}/>
     });
-
-
 
     return (
 
@@ -141,8 +137,5 @@ class TaskList extends React.Component {
     )
   }
 }
-
-
-
 
 export default TaskList;

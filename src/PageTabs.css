@@ -1,0 +1,46 @@
+.page-tabs .nav-link {
+    cursor: pointer;
+}
+
+.page-tabs .nav-link.active {
+    color: blue;
+}
+
+
+.done {
+    float: left;
+    background-color: darkgray;
+    border: blue;
+    border-style: groove;
+    border-width: 4px;
+    height:150px;
+}
+
+.progress {
+    float: left;
+    background-color: darkgray;
+    padding-bottom: 10px;
+    border: blue;
+    border-style: groove;
+    border-width: 4px;
+    height:150px;
+}
+.todo {
+    float: left;
+    background-color: darkgray;
+    padding-bottom: 10px;
+    border: blue;
+    border-style: groove;
+    border-width: 4px;
+    height:150px;
+}
+
+.review {
+    float: left;
+    background-color: darkgray;
+    padding-bottom: 10px;
+    border: blue;
+    border-style: groove;
+    border-width: 4px;
+    height:150px;
+}
