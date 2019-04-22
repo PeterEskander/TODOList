@@ -4,6 +4,7 @@ import axios from 'axios';
 import PageTabs from './PageTabs';
 import TaskList from './TaskList';
 import AddTask from './AddTask';
+import TaskBoard from './TaskBoard';
 //import TaskBoard from './TaskBoard';
 
 class App extends Component {
@@ -66,10 +67,10 @@ class App extends Component {
                 return (this.wrapPage(
                     <TaskList tasks={this.state.tasks} />
                 ));
-            /*case 'TaskBoard':
+            case 'TaskBoard':
                 return (this.wrapPage(
                     <TaskBoard/>
-                ));*/
+                ));
             case 'AddTask':
                 return (this.wrapPage(
                     <AddTask onSubmit={this.onSubmit} />
